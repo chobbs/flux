@@ -6,23 +6,18 @@ Use this Flux Package to send an automated message to a Discord channel using a 
 
 Here's the usage definition for the `discord.send()` function.
 
-    // Custom discord function
-    // `url` - string - URL of the discord webhook endpoint
-    // `username` - string - Username posting the message.
-    // `content` - string - The text to display in discord.
+    //username - string - overrides the current username of the webhook.
+    //content - string - simple message, the message contains (up to 2000 characters)
+    //webhook - string generated on discord to post messages to a channel
 
     import "discord"
     import "http"
     import "json"
     import "influxdata/influxdb/secrets"
 
-    //username - overrides the current username of the webhook.
-    //content - simple message, the message contains (up to 2000 characters)
-    //webhook - generated on discord to post messages to a channel
-
     //this value can be stored in the secret-store()
     hook = secrets.get(key: "DISCORD_HOOK")
-    
+
     lastReported =
       from(bucket: "example-bucket")
         |> range(start: -1m)
@@ -35,6 +30,7 @@ Here's the usage definition for the `discord.send()` function.
       username:"chobbs",
       content:"Great Scott! -  Disk usages is at \"${lastReported.status}\"."."
       )
+
 
 
 ## Contact
