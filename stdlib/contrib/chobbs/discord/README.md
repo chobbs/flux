@@ -28,9 +28,7 @@ Here's an example definition for the `discord.send()` function.
     discord.send = (
       url:hook,
       username:"chobbs",
-      content:"Great Scott! -  Disk usages is at \"${lastReported.status}\"."
-      )
-
+      content:"Great Scott! -  Disk usages is at \"${lastReported.status}\".")
 
 
 ## Contact
