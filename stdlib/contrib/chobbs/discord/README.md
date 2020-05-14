@@ -1,6 +1,6 @@
 # Discord Package
 
-Use this Flux Package to send an automated message to a Discord channel using a webhook.
+Use this Flux Package to send a single message to a Discord channel using a webhook.
 
 ### Basic Syntax
 
