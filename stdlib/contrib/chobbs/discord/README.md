@@ -25,10 +25,10 @@ Here's the usage definition for the `discord.send()` function.
         |> last()
         |> tableFind(fn: (key) => exists key._level)
 
-   discord.send = (
+    discord.send = (
       url:hook,
       username:"chobbs",
-      content:"Great Scott! -  Disk usages is at \"${lastReported.status}\"."."
+      content:"Great Scott! -  Disk usages is at \"${lastReported.status}\"."
       )
 
 
