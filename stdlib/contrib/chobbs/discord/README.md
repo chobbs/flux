@@ -35,7 +35,7 @@ Here's an example definition for the `discord.send()` function.
 
 ## Contact
 
-Provide a way for users to get in touch with you if they have questions or need help using your template. What information you give is up to you, but we encourage providing those below.
+Provide a way for users to get in touch with you if they have questions or need help using your package. What information you give is up to you, but we encourage providing those below.
 
 - Author: Craig Hobbs
 - Email: craig@influxdata.com
