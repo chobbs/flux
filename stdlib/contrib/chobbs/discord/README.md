@@ -16,7 +16,7 @@ Here's an example definition for the `discord.send()` function.
     //this value can be stored in the secret-store()
     hook = secrets.get(key: "DISCORD_HOOK")
 
-  diskSpace =
+    diskSpace =
       from(bucket: "telegraf")
       |> range(start: -10m)
       |> filter(fn: (r) => r["_measurement"] == "disk")
