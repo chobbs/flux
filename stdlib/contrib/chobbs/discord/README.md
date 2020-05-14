@@ -11,24 +11,24 @@ Here's an example definition for the `discord.send()` function.
     //webhook - string - generated on discord to post messages to a channel
 
     import "discord"
-    import "http"
-    import "json"
     import "influxdata/influxdb/secrets"
 
     //this value can be stored in the secret-store()
     hook = secrets.get(key: "DISCORD_HOOK")
 
-    lastReported =
-      from(bucket: "example-bucket")
-        |> range(start: -1m)
-        |> filter(fn: (r) => r._measurement == "statuses")
-        |> last()
-        |> tableFind(fn: (key) => exists key._level)
+  diskSpace =
+      from(bucket: "telegraf")
+      |> range(start: -10m)
+      |> filter(fn: (r) => r["_measurement"] == "disk")
+      |> filter(fn: (r) => r["_field"] == "used_percent")
+      |> filter(fn: (r) => r["path"] == "/")
+      |> map(fn: (r) => ({ r with rootUsage:  string(v: r._value)}))
+      |> last()
 
     discord.send = (
       url:hook,
       username:"chobbs",
-      content:"Great Scott! -  Disk usages is at \"${lastReported.status}\".")
+      content:"Great Scott!- Disk usage is: " + diskSpace.rootUsage)
 
 
 ## Contact
