@@ -2,13 +2,13 @@
 
 Use this Flux Package to send a single message to a Discord channel using a webhook.
 
-### Basic Syntax
+### Basic Example
 
-Here's the usage definition for the `discord.send()` function.
+Here's an example definition for the `discord.send()` function.
 
-    //username - string - overrides the current username of the webhook.
+   //username - string - overrides the current username of the webhook.
     //content - string - simple message, the message contains (up to 2000 characters)
-    //webhook - string generated on discord to post messages to a channel
+    //webhook - string - generated on discord to post messages to a channel
 
     import "discord"
     import "http"
