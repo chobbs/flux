@@ -1,33 +1,41 @@
-# Discord Flux Package
+# Discord Package
 
-This InfluxDB Package can be used to send messages to a Discod channel
-via your webhook. Import the discord package.
+Use this Flux Package to send an automated message to a Discord channel using a webhook.
 
 ### Basic Syntax
 
-Here are a few examples of the language to get an idea of the syntax.
+Here's the usage definition for the `discord.send()` function.
 
-    // Several data types are built-in
     // Custom discord function
     // `url` - string - URL of the discord webhook endpoint
     // `username` - string - Username posting the message.
     // `content` - string - The text to display in discord.
+
     import "discord"
     import "http"
     import "json"
+    import "influxdata/influxdb/secrets"
 
-    discord.send = (url, username, content) => {
-      data = {
-          username: username,
-          content: content
-        }
+    //username - overrides the current username of the webhook.
+    //content - simple message, the message contains (up to 2000 characters)
+    //webhook - generated on discord to post messages to a channel
 
-      headers = {
-          "Content-Type": "application/json"
-        }
-      encode = json.encode(v:data)
-      return http.post(headers: headers, url: url, data: encode)
-    }
+    //this value can be stored in the secret-store()
+    hook = secrets.get(key: "DISCORD_HOOK")
+    
+    lastReported =
+      from(bucket: "example-bucket")
+        |> range(start: -1m)
+        |> filter(fn: (r) => r._measurement == "statuses")
+        |> last()
+        |> tableFind(fn: (key) => exists key._level)
+
+   discord.send = (
+      url:hook,
+      username:"chobbs",
+      content:"Great Scott! -  Disk usages is at \"${lastReported.status}\"."."
+      )
+
 
 ## Contact
 
