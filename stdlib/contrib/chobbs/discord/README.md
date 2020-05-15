@@ -4,7 +4,7 @@ Use this Flux Package to send a single message to a Discord channel using a webh
 
 ## Parameters
 
-  - 1 Bucket: `quandl`, 30d retention
+  - `username:` string - overrides the current username of the webhook.
   - 2 Labels: `Exchange Rates`, `outputs.influxdb_v2`
   - 1 Telegraf Configuration: `Exchange Rates Data Retrieval.conf`
   - 1 Dashboards: `Exchange Rates`
