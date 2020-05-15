@@ -2,13 +2,19 @@
 
 Use this Flux Package to send a single message to a Discord channel using a webhook.
 
-### Parameters
+## Parameters
+
+  - 1 Bucket: `quandl`, 30d retention
+  - 2 Labels: `Exchange Rates`, `outputs.influxdb_v2`
+  - 1 Telegraf Configuration: `Exchange Rates Data Retrieval.conf`
+  - 1 Dashboards: `Exchange Rates`
+  - 1 Variables: `bucket`
 
 //username - string - overrides the current username of the webhook.
  //content - string - simple message, the message contains (up to 2000 characters)
  //webhook - string - generated on discord to post messages to a channel
 
-### Basic Example
+## Basic Example
 
 Here's an example definition for the `discord.send()` function.
 
