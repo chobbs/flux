@@ -1,4 +1,4 @@
-# Discord Package ![discord](https://www.freepnglogos.com/pics/discord-logo-png)
+# Discord Package
 
 
 Use this Flux Package to send a single message to a Discord channel using a webhook.
