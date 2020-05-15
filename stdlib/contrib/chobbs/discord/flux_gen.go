@@ -25,7 +25,7 @@ var pkgAST = &ast.Package{
 					Line:   21,
 				},
 				File:   "discord.flux",
-				Source: "package discord\n\nimport \"http\"\nimport \"json\"\n\n// `url` - string - URL of the discord webhook endpoint\n// `username` - string - Username posting the message.\n// `content` - string - The text to display in discord.\n\nsend = (url, username, content) => {\n  data = {\n      username: username,\n      content: content\n    }\n\n  headers = {\n      \"Content-Type\": \"application/json\"\n    }\n  encode = json.encode(v:data)\n  return http.post(headers: headers, url: url, data: encode)\n}",
+				Source: "package discord\n\nimport \"http\"\nimport \"json\"\n\n// `url` - string - URL of the discord webhook endpoint\n// `username` - string - Username posting the message.\n// `content` - string - The text to display in discord.\n\nsend = (url, botuser, content) => {\n  data = {\n      botuser: username,\n      content: content\n    }\n\n  headers = {\n      \"Content-Type\": \"application/json\"\n    }\n  encode = json.encode(v:data)\n  return http.post(headers: headers, url: url, data: encode)\n}",
 				Start: ast.Position{
 					Column: 1,
 					Line:   1,
@@ -41,7 +41,7 @@ var pkgAST = &ast.Package{
 						Line:   21,
 					},
 					File:   "discord.flux",
-					Source: "send = (url, username, content) => {\n  data = {\n      username: username,\n      content: content\n    }\n\n  headers = {\n      \"Content-Type\": \"application/json\"\n    }\n  encode = json.encode(v:data)\n  return http.post(headers: headers, url: url, data: encode)\n}",
+					Source: "send = (url, botuser, content) => {\n  data = {\n      botuser: username,\n      content: content\n    }\n\n  headers = {\n      \"Content-Type\": \"application/json\"\n    }\n  encode = json.encode(v:data)\n  return http.post(headers: headers, url: url, data: encode)\n}",
 					Start: ast.Position{
 						Column: 1,
 						Line:   10,
@@ -75,7 +75,7 @@ var pkgAST = &ast.Package{
 							Line:   21,
 						},
 						File:   "discord.flux",
-						Source: "(url, username, content) => {\n  data = {\n      username: username,\n      content: content\n    }\n\n  headers = {\n      \"Content-Type\": \"application/json\"\n    }\n  encode = json.encode(v:data)\n  return http.post(headers: headers, url: url, data: encode)\n}",
+						Source: "(url, botuser, content) => {\n  data = {\n      botuser: username,\n      content: content\n    }\n\n  headers = {\n      \"Content-Type\": \"application/json\"\n    }\n  encode = json.encode(v:data)\n  return http.post(headers: headers, url: url, data: encode)\n}",
 						Start: ast.Position{
 							Column: 8,
 							Line:   10,
@@ -91,9 +91,9 @@ var pkgAST = &ast.Package{
 								Line:   21,
 							},
 							File:   "discord.flux",
-							Source: "{\n  data = {\n      username: username,\n      content: content\n    }\n\n  headers = {\n      \"Content-Type\": \"application/json\"\n    }\n  encode = json.encode(v:data)\n  return http.post(headers: headers, url: url, data: encode)\n}",
+							Source: "{\n  data = {\n      botuser: username,\n      content: content\n    }\n\n  headers = {\n      \"Content-Type\": \"application/json\"\n    }\n  encode = json.encode(v:data)\n  return http.post(headers: headers, url: url, data: encode)\n}",
 							Start: ast.Position{
-								Column: 36,
+								Column: 35,
 								Line:   10,
 							},
 						},
@@ -107,7 +107,7 @@ var pkgAST = &ast.Package{
 									Line:   14,
 								},
 								File:   "discord.flux",
-								Source: "data = {\n      username: username,\n      content: content\n    }",
+								Source: "data = {\n      botuser: username,\n      content: content\n    }",
 								Start: ast.Position{
 									Column: 3,
 									Line:   11,
@@ -141,7 +141,7 @@ var pkgAST = &ast.Package{
 										Line:   14,
 									},
 									File:   "discord.flux",
-									Source: "{\n      username: username,\n      content: content\n    }",
+									Source: "{\n      botuser: username,\n      content: content\n    }",
 									Start: ast.Position{
 										Column: 10,
 										Line:   11,
@@ -153,11 +153,11 @@ var pkgAST = &ast.Package{
 									Errors: nil,
 									Loc: &ast.SourceLocation{
 										End: ast.Position{
-											Column: 25,
+											Column: 24,
 											Line:   12,
 										},
 										File:   "discord.flux",
-										Source: "username: username",
+										Source: "botuser: username",
 										Start: ast.Position{
 											Column: 7,
 											Line:   12,
@@ -169,31 +169,31 @@ var pkgAST = &ast.Package{
 										Errors: nil,
 										Loc: &ast.SourceLocation{
 											End: ast.Position{
-												Column: 15,
+												Column: 14,
 												Line:   12,
 											},
 											File:   "discord.flux",
-											Source: "username",
+											Source: "botuser",
 											Start: ast.Position{
 												Column: 7,
 												Line:   12,
 											},
 										},
 									},
-									Name: "username",
+									Name: "botuser",
 								},
 								Value: &ast.Identifier{
 									BaseNode: ast.BaseNode{
 										Errors: nil,
 										Loc: &ast.SourceLocation{
 											End: ast.Position{
-												Column: 25,
+												Column: 24,
 												Line:   12,
 											},
 											File:   "discord.flux",
 											Source: "username",
 											Start: ast.Position{
-												Column: 17,
+												Column: 16,
 												Line:   12,
 											},
 										},
@@ -838,11 +838,11 @@ var pkgAST = &ast.Package{
 						Errors: nil,
 						Loc: &ast.SourceLocation{
 							End: ast.Position{
-								Column: 22,
+								Column: 21,
 								Line:   10,
 							},
 							File:   "discord.flux",
-							Source: "username",
+							Source: "botuser",
 							Start: ast.Position{
 								Column: 14,
 								Line:   10,
@@ -854,18 +854,18 @@ var pkgAST = &ast.Package{
 							Errors: nil,
 							Loc: &ast.SourceLocation{
 								End: ast.Position{
-									Column: 22,
+									Column: 21,
 									Line:   10,
 								},
 								File:   "discord.flux",
-								Source: "username",
+								Source: "botuser",
 								Start: ast.Position{
 									Column: 14,
 									Line:   10,
 								},
 							},
 						},
-						Name: "username",
+						Name: "botuser",
 					},
 					Value: nil,
 				}, &ast.Property{
@@ -873,13 +873,13 @@ var pkgAST = &ast.Package{
 						Errors: nil,
 						Loc: &ast.SourceLocation{
 							End: ast.Position{
-								Column: 31,
+								Column: 30,
 								Line:   10,
 							},
 							File:   "discord.flux",
 							Source: "content",
 							Start: ast.Position{
-								Column: 24,
+								Column: 23,
 								Line:   10,
 							},
 						},
@@ -889,13 +889,13 @@ var pkgAST = &ast.Package{
 							Errors: nil,
 							Loc: &ast.SourceLocation{
 								End: ast.Position{
-									Column: 31,
+									Column: 30,
 									Line:   10,
 								},
 								File:   "discord.flux",
 								Source: "content",
 								Start: ast.Position{
-									Column: 24,
+									Column: 23,
 									Line:   10,
 								},
 							},

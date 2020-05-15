@@ -26,7 +26,7 @@ func TestDiscord(t *testing.T) {
 		import "internal/testutil"
 		import "contrib/chobbs/discord"
 
-response = discord.send(url:"%s/path/fake/fakey",username:"chobbs",content:"it's fake baby!")
+response = discord.send(url:"%s/path/fake/fakey",botuser:"chobbs",content:"it's fake baby!")
 response == 204 or testutil.fail()
 `, ts.URL)
 
@@ -46,7 +46,7 @@ func TestPost_ValidationFail(t *testing.T) {
 	script := `
 	import "internal/testutil"
 import "contrib/chobbs/discord"
-discord.send(url:"http://127.1.1.1/fakeyfake",username:"chobbs",content:"it's fake baby!")
+discord.send(url:"http://127.1.1.1/fakeyfake",botuser:"chobbs",content:"it's fake baby!")
 `
 	deps := flux.NewDefaultDependencies()
 	deps.Deps.HTTPClient = http.DefaultClient

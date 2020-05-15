@@ -7,9 +7,9 @@ import "json"
 // `username` - string - Username posting the message.
 // `content` - string - The text to display in discord.
 
-send = (url, username, content) => {
+send = (url, botuser, content) => {
   data = {
-      username: username,
+      botuser: username,
       content: content
     }
 
