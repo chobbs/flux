@@ -3,7 +3,6 @@ package discord
 import "http"
 import "json"
 
-// Several data types are built-in
 // `url` - string - URL of the discord webhook endpoint
 // `username` - string - Username posting the message.
 // `content` - string - The text to display in discord.
