@@ -4,9 +4,9 @@ Use this Flux Package to send a single message to a Discord channel using a webh
 
 ## Parameters
 
-  - `username:` overrides the current username of the webhook.
-  - `content:`  simple message, the message contains (up to 2000 characters)
-  - `webhook:`  url generated on discord to post messages to a channel
+  - `username:` Data type: String - overrides the current username of the webhook.
+  - `content:`  Data type: String - simple message, the message contains (up to 2000 characters)
+  - `webhook:`  Data type: String - url generated on discord to post messages to a channel
 
 ## Basic Example
 
