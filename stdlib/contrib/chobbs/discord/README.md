@@ -27,7 +27,7 @@ Here's an example definition for the `discord.send()` function.
       |> map(fn: (r) => ({ r with rootUsage:  string(v: r._value)}))
       |> last()
 
-    discord.send = (
+    discord.send(
       url:hook,
       username:"chobbs",
       content:"Great Scott!- Disk usage is: " + diskSpace.rootUsage)
