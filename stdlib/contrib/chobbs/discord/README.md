@@ -19,19 +19,19 @@ Here's an example definition for the `discord.send()` function.
     //this value can be stored in the secret-store()
     hook = secrets.get(key: "DISCORD_HOOK")
 
-    diskSpace =
-      from(bucket: "telegraf")
-      |> range(start: -10m)
-      |> filter(fn: (r) => r["_measurement"] == "disk")
-      |> filter(fn: (r) => r["_field"] == "used_percent")
-      |> filter(fn: (r) => r["path"] == "/")
-      |> map(fn: (r) => ({ r with rootUsage:  string(v: r._value)}))
-      |> last()
+    lastReported =
+      from(bucket: "example-bucket")
+        |> range(start: -1m)
+        |> filter(fn: (r) => r._measurement == "statuses")
+        |> last()
+        |> tableFind(fn: (key) => true)
+        |> getRecord(idx: 0)
 
     discord.send(
       url:hook,
       botuser:"chobbs",
-      content:"Great Scott!- Disk usage is: " + diskSpace.rootUsage)
+      content: "Great Scott!- Disk usage is: \"${lastReported.status}\"."
+      )
 
 
 ## Contact
