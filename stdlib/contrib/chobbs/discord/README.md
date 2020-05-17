@@ -13,7 +13,7 @@ Use this Flux Package to send a single message to a Discord channel using a webh
 
 Here's an example definition for the `discord.send()` function.
 
-    import "discord"
+    import "contrib/chobbs/discord"
     import "influxdata/influxdb/secrets"
 
     //this value can be stored in the secret-store()
